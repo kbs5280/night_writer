@@ -67,8 +67,7 @@ class ConverterTest < Minitest::Test
     text = ("add")
     con = Converter.new(text)
     con.string_it_up
-    # assert_equal ["0.0000", "...0.0", "......"],
-    con.assembled
+    assert_equal ["0.0000", "...0.0", "......"], con.assembled
     con.write
   end
 

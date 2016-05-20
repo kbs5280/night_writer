@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.10.0/application.js' type='text/javascript'></script>    
     <link href='./assets/0.10.0/application.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./assets/0.10.0/favicon_green.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.10.0/favicon_yellow.png" />
     <link rel="icon" type="image/png" href="./assets/0.10.0/favicon.png" />
   </head>
   
@@ -14,18 +14,18 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-05-20T11:07:43-06:00">2016-05-20T11:07:43-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-05-20T11:28:15-06:00">2016-05-20T11:28:15-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">90.7%</span></span>
+    (<span class="covered_percent"><span class="yellow">86.05%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.16
+         4.1
        </span>
     </span> hits/line)
   </h2>
@@ -33,8 +33,8 @@
   <div>
     <b>3</b> files in total.
     <b>43</b> relevant lines. 
-    <span class="green"><b>39</b> lines covered</span> and
-    <span class="red"><b>4</b> lines missed </span>
+    <span class="green"><b>37</b> lines covered</span> and
+    <span class="red"><b>6</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -52,12 +52,12 @@
       
       <tr>
         <td class="strong"><a href="#bab32f7ee2d9e44045806234dfe6f855d033c0b7" class="src_link" title="lib/converter.rb">lib/converter.rb</a></td>
-        <td class="green strong">100.0 %</td>
+        <td class="green strong">93.1 %</td>
         <td>66</td>
         <td>29</td>
-        <td>29</td>
-        <td>0</td>
-        <td>5.0</td>
+        <td>27</td>
+        <td>2</td>
+        <td>4.9</td>
       </tr>
       
       <tr>
@@ -99,11 +99,11 @@
         <div class="source_table" id="bab32f7ee2d9e44045806234dfe6f855d033c0b7">
   <div class="header">
     <h3>lib/converter.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="green">93.1 %</span> covered</h4>
     <div>
       <b>29</b> relevant lines. 
-      <span class="green"><b>29</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <span class="green"><b>27</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
   
@@ -251,7 +251,7 @@
         <li class="never" data-hits="" data-linenumber="24">
           
           
-          <code class="ruby">    #write the file</code>
+          <code class="ruby">    #write the file (maybe in the filehandler)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
@@ -416,8 +416,8 @@
           <code class="ruby">  def assembled</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="52">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="52">
+          <span class="hits">1</span>
           
           <code class="ruby">    [first_braille_line, second_braille_line, third_braille_line].join(&quot;\n&quot;)</code>
         </li>
@@ -452,8 +452,8 @@
           <code class="ruby">  def time</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="58">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="58">
+          
           
           <code class="ruby">    Time.now.strftime(&quot;%Y-%m-%e-%I:%M%p&quot;)</code>
         </li>
@@ -476,8 +476,8 @@
           <code class="ruby">  def write</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="62">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="62">
+          
           
           <code class="ruby">    File.open(&quot;braille-#{time}.txt&quot;, &#39;w&#39;) { |file| file.write(assembled) }</code>
         </li>
