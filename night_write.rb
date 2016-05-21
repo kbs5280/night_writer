@@ -1,6 +1,11 @@
-require './lib/converter.rb'
 require './lib/file_handler.rb'
+require './lib/braille_converter.rb'
+require 'pry'
 
-con = Filehandler.new(ARGV[0])
+handler = FileHandler.new(ARGV[0])
+bc = BrailleConverter.new(handler.text)
 
-con.start
+bc.string_it_up
+
+output = bc.output
+handler.write(output)

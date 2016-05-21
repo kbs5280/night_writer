@@ -1,8 +1,9 @@
 require_relative 'dictionary'
-require_relative 'file_handler'
 require 'pry'
 
-class Converter
+# need to add a test for a string NEED TO ADD SPACES, then characters
+
+class BrailleConverter
   attr_reader :dictionary,
               :first_braille_line,
               :second_braille_line,
@@ -17,14 +18,7 @@ class Converter
     @third_braille_line   = ""
   end
 
-  def start
-    #string_it_up
-    #create a method that calls all three lines together
-    #call that method in write
-    #write the file (maybe in the filehandler)
-  end
-
-  # ROMAN TO BRAILLE
+  # LATIN TO BRAILLE
 
   def string_it_up
     text.chars.each do |letter|
@@ -35,32 +29,21 @@ class Converter
   end
 
   def first_line_to_braille(input)
-    first_braille_line << dictionary.first_line[input]
+    first_braille_line << dictionary.first_line(input)
   end
 
-  def second_line_to_braille(string)
-    second_braille_line << dictionary.second_line[string]
+  def second_line_to_braille(input)
+    second_braille_line << dictionary.second_line(input)
   end
 
-  def third_line_to_braille(string)
-    third_braille_line << dictionary.third_line[string]
+  def third_line_to_braille(input)
+    third_braille_line << dictionary.third_line(input)
   end
 
-  # ASSEMBLE THE LINES OF BRAILLE
+  # COALLATE THE LINES OF BRAILLE
 
-  def assembled
+  def output
     [first_braille_line, second_braille_line, third_braille_line].join("\n")
   end
-
-  # WRITE
-
-  def time
-    Time.now.strftime("%Y-%m-%e-%I:%M%p")
-  end
-
-  def write
-    File.open("braille-#{time}.txt", 'w') { |file| file.write(assembled) }
-  end
-
 
 end
