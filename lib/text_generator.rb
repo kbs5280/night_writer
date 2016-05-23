@@ -1,25 +1,15 @@
 require_relative 'dictionary'
 
 class TextGenerator
-  attr_reader :braille, :dictionary, :letters
+  attr_reader :dictionary, :input, :letters, :braille
 
-  def initialize(braille)
+  def initialize(input)
     @dictionary = Dictionary.new
-    @braille = braille
+    @input = input
     @letters = []
+    @braille = []
   end
 
-  def first_line_to_text(braille)
-    braille = braille[0].join
-    binding.pry #use INVERT and see if it works 
-      letters << dictionary.first_line.key(braille)
-  end
-
-  def letter_processer(letter)
-  end
-
-  def dictionary_lines
-    [dictionary.first_line, dictionary.second_line, dictionary.third_line]
-  end
+  
 
 end

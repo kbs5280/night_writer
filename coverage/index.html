@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-05-21T09:30:37-06:00">2016-05-21T09:30:37-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-05-23T10:57:46-06:00">2016-05-23T10:57:46-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">80.77%</span></span>
+    (<span class="covered_percent"><span class="yellow">88.24%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         11.31
+         1.6
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>3</b> files in total.
-    <b>52</b> relevant lines. 
-    <span class="green"><b>42</b> lines covered</span> and
-    <span class="red"><b>10</b> lines missed </span>
+    <b>1</b> files in total.
+    <b>17</b> relevant lines. 
+    <span class="green"><b>15</b> lines covered</span> and
+    <span class="red"><b>2</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -51,33 +51,13 @@
     <tbody>
       
       <tr>
-        <td class="strong"><a href="#ad723777a6cd00c8f5c80171eb2e325921a11bc0" class="src_link" title="lib/braille_converter.rb">lib/braille_converter.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>49</td>
-        <td>23</td>
-        <td>23</td>
-        <td>0</td>
-        <td>10.2</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#8423df32e7a18ec1718888cd2433539faa0f11fe" class="src_link" title="lib/dictionary.rb">lib/dictionary.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>37</td>
-        <td>12</td>
-        <td>12</td>
-        <td>0</td>
-        <td>28.9</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#b2bb37142ac57398c6e241c4b9ff6b1366368a36" class="src_link" title="lib/file_handler.rb">lib/file_handler.rb</a></td>
-        <td class="red strong">41.18 %</td>
+        <td class="strong"><a href="#bf9f6ccf2d519b79e5bc2f654fbdcf0094fffb44" class="src_link" title="lib/text_handler.rb">lib/text_handler.rb</a></td>
+        <td class="yellow strong">88.24 %</td>
         <td>33</td>
         <td>17</td>
-        <td>7</td>
-        <td>10</td>
-        <td>0.4</td>
+        <td>15</td>
+        <td>2</td>
+        <td>1.6</td>
       </tr>
       
     </tbody>
@@ -96,566 +76,14 @@
     
       <div class="source_files">
       
-        <div class="source_table" id="ad723777a6cd00c8f5c80171eb2e325921a11bc0">
+        <div class="source_table" id="bf9f6ccf2d519b79e5bc2f654fbdcf0094fffb44">
   <div class="header">
-    <h3>lib/braille_converter.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
-    <div>
-      <b>23</b> relevant lines. 
-      <span class="green"><b>23</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">require_relative &#39;dictionary&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="2">
-          <span class="hits">1</span>
-          
-          <code class="ruby">require &#39;pry&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="3">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="4">
-          
-          
-          <code class="ruby"># need to add a test for a string NEED TO ADD SPACES, then characters</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
-          
-          <code class="ruby">class BrailleConverter</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  attr_reader :dictionary,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="8">
-          
-          
-          <code class="ruby">              :first_braille_line,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="9">
-          
-          
-          <code class="ruby">              :second_braille_line,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="10">
-          
-          
-          <code class="ruby">              :third_braille_line,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
-          
-          
-          <code class="ruby">              :text</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="12">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="13">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def initialize(text)</code>
-        </li>
-      
-        <li class="covered" data-hits="10" data-linenumber="14">
-          <span class="hits">10</span>
-          
-          <code class="ruby">    @dictionary           = Dictionary.new</code>
-        </li>
-      
-        <li class="covered" data-hits="10" data-linenumber="15">
-          <span class="hits">10</span>
-          
-          <code class="ruby">    @text                 = text</code>
-        </li>
-      
-        <li class="covered" data-hits="10" data-linenumber="16">
-          <span class="hits">10</span>
-          
-          <code class="ruby">    @first_braille_line   = &quot;&quot;</code>
-        </li>
-      
-        <li class="covered" data-hits="10" data-linenumber="17">
-          <span class="hits">10</span>
-          
-          <code class="ruby">    @second_braille_line  = &quot;&quot;</code>
-        </li>
-      
-        <li class="covered" data-hits="10" data-linenumber="18">
-          <span class="hits">10</span>
-          
-          <code class="ruby">    @third_braille_line   = &quot;&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="21">
-          
-          
-          <code class="ruby">  # LATIN TO BRAILLE</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="23">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def string_it_up</code>
-        </li>
-      
-        <li class="covered" data-hits="5" data-linenumber="24">
-          <span class="hits">5</span>
-          
-          <code class="ruby">    text.chars.each do |letter|</code>
-        </li>
-      
-        <li class="covered" data-hits="27" data-linenumber="25">
-          <span class="hits">27</span>
-          
-          <code class="ruby">      first_line_to_braille(letter)</code>
-        </li>
-      
-        <li class="covered" data-hits="27" data-linenumber="26">
-          <span class="hits">27</span>
-          
-          <code class="ruby">      second_line_to_braille(letter)</code>
-        </li>
-      
-        <li class="covered" data-hits="27" data-linenumber="27">
-          <span class="hits">27</span>
-          
-          <code class="ruby">      third_line_to_braille(letter)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="28">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="29">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="30">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="31">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def first_line_to_braille(input)</code>
-        </li>
-      
-        <li class="covered" data-hits="30" data-linenumber="32">
-          <span class="hits">30</span>
-          
-          <code class="ruby">    first_braille_line &lt;&lt; dictionary.first_line(input)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="33">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="34">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="35">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def second_line_to_braille(input)</code>
-        </li>
-      
-        <li class="covered" data-hits="28" data-linenumber="36">
-          <span class="hits">28</span>
-          
-          <code class="ruby">    second_braille_line &lt;&lt; dictionary.second_line(input)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="37">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="38">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="39">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def third_line_to_braille(input)</code>
-        </li>
-      
-        <li class="covered" data-hits="28" data-linenumber="40">
-          <span class="hits">28</span>
-          
-          <code class="ruby">    third_braille_line &lt;&lt; dictionary.third_line(input)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="41">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="42">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="43">
-          
-          
-          <code class="ruby">  # COALLATE THE LINES OF BRAILLE</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="44">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="45">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def output</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="46">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    [first_braille_line, second_braille_line, third_braille_line].join(&quot;\n&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="47">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="48">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="49">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-      
-        <div class="source_table" id="8423df32e7a18ec1718888cd2433539faa0f11fe">
-  <div class="header">
-    <h3>lib/dictionary.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
-    <div>
-      <b>12</b> relevant lines. 
-      <span class="green"><b>12</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">class Dictionary</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="2">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  attr_reader :first, :second, :third</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="3">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def initialize</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="10" data-linenumber="6">
-          <span class="hits">10</span>
-          
-          <code class="ruby">    def first_line(input)</code>
-        </li>
-      
-        <li class="covered" data-hits="84" data-linenumber="7">
-          <span class="hits">84</span>
-          
-          <code class="ruby">      first.detect { |key, value| key.include?(input) }.last</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="8">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="9">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="10" data-linenumber="10">
-          <span class="hits">10</span>
-          
-          <code class="ruby">    def second_line(input)</code>
-        </li>
-      
-        <li class="covered" data-hits="101" data-linenumber="11">
-          <span class="hits">101</span>
-          
-          <code class="ruby">      second.detect { |key, value| key.include?(input) }.last</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="12">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="13">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="10" data-linenumber="14">
-          <span class="hits">10</span>
-          
-          <code class="ruby">    def third_line(input)</code>
-        </li>
-      
-        <li class="covered" data-hits="99" data-linenumber="15">
-          <span class="hits">99</span>
-          
-          <code class="ruby">      third.detect { |key, value| key.include?(input) }.last</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="16">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="17">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="10" data-linenumber="18">
-          <span class="hits">10</span>
-          
-          <code class="ruby">    @first = {   &quot;ab&quot; =&gt; &#39;0.&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
-          
-          
-          <code class="ruby">                      &quot;d&quot; =&gt; &quot;00&quot;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
-          <code class="ruby">                      &quot;t&quot; =&gt; &quot;.0&quot;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="21">
-          
-          
-          <code class="ruby">                      &quot; &quot; =&gt; &quot; &quot;}</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="10" data-linenumber="23">
-          <span class="hits">10</span>
-          
-          <code class="ruby">    @second = {  &quot;a&quot; =&gt; &quot;..&quot;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
-          
-          
-          <code class="ruby">                      &quot;b&quot; =&gt; &quot;0.&quot;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="25">
-          
-          
-          <code class="ruby">                      &quot;d&quot; =&gt; &quot;.0&quot;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="26">
-          
-          
-          <code class="ruby">                      &quot;t&quot; =&gt; &quot;00&quot;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="27">
-          
-          
-          <code class="ruby">                      &quot; &quot; =&gt; &quot; &quot;}</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="28">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="10" data-linenumber="29">
-          <span class="hits">10</span>
-          
-          <code class="ruby">    @third = {   &quot;a&quot; =&gt; &#39;..&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="30">
-          
-          
-          <code class="ruby">                      &quot;b&quot; =&gt; &#39;..&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="31">
-          
-          
-          <code class="ruby">                      &quot;d&quot; =&gt; &quot;..&quot;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="32">
-          
-          
-          <code class="ruby">                      &quot;t&quot; =&gt; &quot;0.&quot;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="33">
-          
-          
-          <code class="ruby">                      &quot; &quot; =&gt; &quot; &quot;}</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="34">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="35">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="36">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="37">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-      
-        <div class="source_table" id="b2bb37142ac57398c6e241c4b9ff6b1366368a36">
-  <div class="header">
-    <h3>lib/file_handler.rb</h3>
-    <h4><span class="red">41.18 %</span> covered</h4>
+    <h3>lib/text_handler.rb</h3>
+    <h4><span class="yellow">88.24 %</span> covered</h4>
     <div>
       <b>17</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
-      <span class="red"><b>10</b> lines missed.</span>
+      <span class="green"><b>15</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
   
@@ -665,7 +93,7 @@
         <li class="covered" data-hits="1" data-linenumber="1">
           <span class="hits">1</span>
           
-          <code class="ruby">class FileHandler</code>
+          <code class="ruby">class TextHandler</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="2">
@@ -704,8 +132,8 @@
           <code class="ruby">  def initialize(filename)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="8">
-          
+        <li class="covered" data-hits="4" data-linenumber="8">
+          <span class="hits">4</span>
           
           <code class="ruby">    file_processor(filename)</code>
         </li>
@@ -728,8 +156,8 @@
           <code class="ruby">  def text</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="12">
-          
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
           
           <code class="ruby">    input.strip</code>
         </li>
@@ -752,8 +180,8 @@
           <code class="ruby">  def time</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="16">
-          
+        <li class="covered" data-hits="3" data-linenumber="16">
+          <span class="hits">3</span>
           
           <code class="ruby">    Time.now.strftime(&quot;%Y-%m-%e-%I:%M%p&quot;)</code>
         </li>
@@ -776,20 +204,20 @@
           <code class="ruby">  def write(output)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="20">
-          
+        <li class="covered" data-hits="2" data-linenumber="20">
+          <span class="hits">2</span>
           
           <code class="ruby">    file = File.open(&quot;braille-#{time}.txt&quot;, &#39;w&#39;) { |file| file.write(output) }</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="21">
-          
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
           
           <code class="ruby">    print &quot;\nCreated &#39;braille-#{time}.txt&#39; containing #{file} characters.\n\n&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="22">
-          
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
           
           <code class="ruby">    file.inspect</code>
         </li>
@@ -812,14 +240,14 @@
           <code class="ruby">  def file_processor(filename)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="26">
-          
+        <li class="covered" data-hits="4" data-linenumber="26">
+          <span class="hits">4</span>
           
           <code class="ruby">    if File.exist?(filename)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="27">
-          
+        <li class="covered" data-hits="4" data-linenumber="27">
+          <span class="hits">4</span>
           
           <code class="ruby">      @input = File.read(filename)</code>
         </li>

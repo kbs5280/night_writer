@@ -1,4 +1,4 @@
-class FileHandler
+class TextHandler
   attr_reader :input
 
   # may want an additional tests to see if the file exists
