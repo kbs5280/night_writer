@@ -11,8 +11,27 @@ class TextGeneratorTest < Minitest::Test
     @t = TextGenerator.new(handler.first_braille_line, handler.second_braille_line, handler.third_braille_line)
   end
 
-  def test_it_can_get_the_first_index_from_from_the_first_line
-    assert_equal "00", t.first_line_to_text
+  # def test_it_can_get_the_first_index_from_from_the_first_line
+  #   assert_equal ["00"], t.first_line_to_text
+  # end
+  #
+  # def test_it_can_get_the_second_index_from_from_the_first_line
+  #   assert_equal [".."], t.second_line_to_text
+  # end
+  #
+  # def test_it_can_get_the_third_index_from_from_the_first_line
+  #   assert_equal [".."], t.third_line_to_text
+  # end
+  #
+  # def test_it_can_collate_the_lines_of_braille
+  #   t.braille_to_letters
+  #   assert_equal ["c"], t.text
+  # end
+
+  def test_it_can_generate_a_word_with_a_space
+    t.braille_to_letters
+    assert_equal ["c", "a", "t", " ", "b", "a", "t"], t.text
+    t.output
   end
 
   # def test_it_can_convert_the_first_line_of_another_letter
