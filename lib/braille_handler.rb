@@ -1,13 +1,25 @@
+require './lib/text_generator.rb'
+
 class BrailleHandler
-  attr_reader :input
+  attr_reader :input,
+              :first_braille_line,
+              :second_braille_line,
+              :third_braille_line
 
   def initialize(filename)
     file_processor(filename)
   end
 
-  def text
-    input.split("\n")
-    binding.pry
+  def first_braille_line
+    input.split("\n")[0].chars.each_slice(2).map(&:join)
+  end
+
+  def second_braille_line
+    input.split("\n")[1].chars.each_slice(2).map(&:join)
+  end
+
+  def third_braille_line
+    input.split("\n")[2].chars.each_slice(2).map(&:join)
   end
 
   def time

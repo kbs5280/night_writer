@@ -10,11 +10,25 @@ class BrailleHandlerTest < Minitest::Test
     assert_equal "000..0\n....00\n....0.\n", handler.input
   end
 
-  def test_it_can_parse_the_file
-    filename = "./input/braille_word.txt"
+  def test_it_can_parse_the_first_line_of_the_file
+    filename = "./input/braille_phrase.txt"
     handler = BrailleHandler.new(filename)
 
-    assert_equal ["000..0", "....00", "....0."], handler.text
+    assert_equal ["00", "0.", ".0", "..", "0.", "0.", ".0"], handler.first_braille_line
+  end
+
+  def test_it_can_parse_the_second_line_of_the_file
+    filename = "./input/braille_phrase.txt"
+    handler = BrailleHandler.new(filename)
+
+    assert_equal ["..", "..", "00", "..", "0.", "..", "00"], handler.second_braille_line
+  end
+
+  def test_it_can_parse_the_third_line_of_the_file
+    filename = "./input/braille_phrase.txt"
+    handler = BrailleHandler.new(filename)
+
+    assert_equal ["..", "..", "0.", "..", "..", "..", "0."], handler.third_braille_line
   end
 
   def test_it_can_record_the_time
