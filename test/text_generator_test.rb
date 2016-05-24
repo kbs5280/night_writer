@@ -28,11 +28,19 @@ class TextGeneratorTest < Minitest::Test
   #   assert_equal ["c"], t.text
   # end
 
-  def test_it_can_generate_a_word_with_a_space
+  # def test_it_can_generate_a_word_with_a_space
+  #   t.braille_to_letters
+  #   assert_equal ["c", "a", "t", " ", "b", "a", "t"], t.text
+  #   t.output
+  # end
+
+  def test_it_can_generate_a_word_with_an_uppercase_letter
     t.braille_to_letters
-    assert_equal ["c", "a", "t", " ", "b", "a", "t"], t.text
+    assert_equal ["C", "a", "t", " ", "b", "a", "t"], t.text
     t.output
   end
+
+
 
   # def test_it_can_convert_the_first_line_of_another_letter
   #   braille = ("0.")

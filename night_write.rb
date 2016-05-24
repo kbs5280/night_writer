@@ -6,6 +6,6 @@ handler = TextHandler.new(ARGV[0])
 b = BrailleGenerator.new(handler.text)
 
 b.text_to_braille
-
+b.braille_by_line
 output = b.output
 handler.write(output)

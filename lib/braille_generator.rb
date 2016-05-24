@@ -11,9 +11,9 @@ class BrailleGenerator
   def initialize(text)
     @dictionary           = Dictionary.new
     @text                 = text
-    @first_braille_line = ""
-    @second_braille_line = ""
-    @third_braille_line = ""
+    @first_braille_line = []
+    @second_braille_line = []
+    @third_braille_line = []
   end
 
   def text_to_braille
@@ -26,30 +26,39 @@ class BrailleGenerator
 
   def first_line_to_braille(text)
     if text == text.downcase
-      dictionary.braille[text.downcase][0].join
+      dictionary.braille[text.downcase][0]
     else
-      dictionary.braille["capital"][0].join + dictionary.braille[text.downcase][0].join
+      dictionary.braille["capital"][0] + dictionary.braille[text.downcase][0]
     end
   end
 
   def second_line_to_braille(text)
     if text == text.downcase
-      dictionary.braille[text.downcase][1].join
+      dictionary.braille[text.downcase][1]
     else
-      dictionary.braille["capital"][1].join + dictionary.braille[text.downcase][1].join
+      dictionary.braille["capital"][1] + dictionary.braille[text.downcase][1]
     end
   end
 
   def third_line_to_braille(text)
     if text == text.downcase
-      dictionary.braille[text.downcase][2].join
+      dictionary.braille[text.downcase][2]
     else
-      dictionary.braille["capital"][2].join + dictionary.braille[text.downcase][2].join
+      dictionary.braille["capital"][2] + dictionary.braille[text.downcase][2]
     end
   end
 
-  def output
-    [first_braille_line, second_braille_line, third_braille_line].join("\n")
+  def braille_by_line
+    lines = [first_braille_line, second_braille_line, third_braille_line]
+    slices = []
+    lines.each do |line|
+      line.each_slice(4) { |string| slices << string.join }
+    end
+    slices
   end
-  
+
+  def output
+    braille_by_line
+  end
+
 end
