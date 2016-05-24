@@ -3,9 +3,10 @@ require './lib/text_generator.rb'
 require 'pry'
 
 handler = BrailleHandler.new(ARGV[0])
-t = TextGenerator.new(handler.first_braille_line, handler.second_braille_line, handler.third_braille_line)
+handler.braille_parser
 
-t.braille_to_letters
+t = TextGenerator.new(handler.first_braille_line, handler.second_braille_line, handler.third_braille_line)
+t.braille_to_text
 
 output = t.output
 handler.write(output)

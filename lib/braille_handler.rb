@@ -8,18 +8,19 @@ class BrailleHandler
 
   def initialize(filename)
     file_processor(filename)
+    @first_braille_line = []
+    @second_braille_line = []
+    @third_braille_line = []
+    @count = 0
   end
 
-  def first_braille_line
-    input.split("\n")[0].chars.each_slice(2).map(&:join)
-  end
-
-  def second_braille_line
-    input.split("\n")[1].chars.each_slice(2).map(&:join)
-  end
-
-  def third_braille_line
-    input.split("\n")[2].chars.each_slice(2).map(&:join)
+  def braille_parser
+    until input[@count] == nil
+      first_braille_line << input[@count].chars.each_slice(2).map(&:join)
+      second_braille_line << input[@count + 1].chars.each_slice(2).map(&:join)
+      third_braille_line << input[@count + 2].chars.each_slice(2).map(&:join)
+      @count += 3
+    end
   end
 
   def time
@@ -35,6 +36,7 @@ class BrailleHandler
   def file_processor(filename)
     if File.exist?(filename)
       @input = File.read(filename)
+      @input = input.split
     else puts "\nFile does not exist\n\n"
       exit
     end

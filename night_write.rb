@@ -6,6 +6,9 @@ handler = TextHandler.new(ARGV[0])
 b = BrailleGenerator.new(handler.text)
 
 b.text_to_braille
-b.braille_by_line
+b.first_line_set
+b.second_line_set
+b.third_line_set
+b.transpose
 output = b.output
 handler.write(output)
