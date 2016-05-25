@@ -17,7 +17,6 @@ class TextGeneratorTest < Minitest::Test
   end
 
   def test_it_can_get_the_second_index_from_from_the_first_line
-
     assert_equal [".."], t.second_line_to_text
   end
 
@@ -53,7 +52,7 @@ class TextGeneratorTest < Minitest::Test
   end
 
   def test_it_can_generate_a_number
-    
+
   end
 
 end
