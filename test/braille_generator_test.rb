@@ -97,7 +97,7 @@ class BrailleGeneratorTest < Minitest::Test
   def test_it_can_generate_the_third_line_of_another_letter
     text = ("b")
     b = BrailleGenerator.new(text)
-    assert_equal "..", b.third_line_to_braille(text)
+    assert_equal "..", b.third_line_to_braille(text) 
   end
 
   def test_it_can_generate_the_third_line_of_another_capital_letter

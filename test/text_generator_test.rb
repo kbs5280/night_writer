@@ -8,6 +8,7 @@ class TextGeneratorTest < Minitest::Test
   def setup
     filename = ("./input/braille_phrase.txt")
     handler = BrailleHandler.new(filename)
+    handler.braille_parser
     @t = TextGenerator.new(handler.first_braille_line, handler.second_braille_line, handler.third_braille_line)
   end
 
@@ -16,6 +17,7 @@ class TextGeneratorTest < Minitest::Test
   end
 
   def test_it_can_get_the_second_index_from_from_the_first_line
+
     assert_equal [".."], t.second_line_to_text
   end
 
@@ -48,6 +50,10 @@ class TextGeneratorTest < Minitest::Test
 
     assert_equal ["C", "a", "t", " ", "b", "a", "t", "?"], t.text
     assert_equal "Cat bat?", t.output
+  end
+
+  def test_it_can_generate_a_number
+    
   end
 
 end

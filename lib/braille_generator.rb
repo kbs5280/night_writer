@@ -26,10 +26,7 @@ class BrailleGenerator
   end
 
   def first_line_to_braille(text)
-    if text == "#"
-      dictionary.braille["#"][0].join
-
-    elsif text == text.downcase
+    if text == text.downcase
       dictionary.braille[text.downcase][0].join
     else
       dictionary.braille["capital"][0].join + dictionary.braille[text.downcase][0].join

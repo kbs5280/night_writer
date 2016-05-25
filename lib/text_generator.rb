@@ -16,24 +16,9 @@ class TextGenerator
 
   def braille_to_text
     while first_braille_line[count] != nil
-      braille_lines.each do |line|
-        sets << line
-      end
-      letter = dictionary.braille.invert[sets]
-      if letter == "capital"
-        @count += 1
-        sets.clear
-        braille_lines.each do |line|
-          sets << line
-        end
-        letter = dictionary.braille.invert[sets]
-        text << letter.upcase
-        @count += 1
-      else
-         text << dictionary.braille.invert[sets]
-        @count += 1
-      end
-      sets.clear
+      letter = look_up
+      capital_letters(letter)
+      binding.pry
     end
   end
 
@@ -51,6 +36,35 @@ class TextGenerator
 
   def third_line_to_text
     third_braille_line[count].split
+  end
+
+  def look_up
+    braille_lines.each { |line| sets << line }
+    letter = dictionary.braille.invert[sets]
+  end
+
+  def capital_letters_and_numbers(letter)
+    if letter == "capital"
+      capital_letter(letter)
+    elsif letter.class == "#"
+      number(letter)
+    end
+  end
+
+  def capital_letter(letter)
+    if letter == "capital"
+      reset
+      letter = look_up
+      text << letter.upcase
+    else
+      text << dictionary.braille.invert[sets]
+    end
+    reset
+  end
+
+  def reset
+    @count += 1
+    sets.clear
   end
 
   def output
