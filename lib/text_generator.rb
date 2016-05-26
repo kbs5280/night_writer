@@ -56,7 +56,7 @@ class TextGenerator
 
   def find_number
     number = nil
-    until number == " "
+    until number == " " || nil
       reset
       parsed_braille_lines.each { |line| sets << line }
       number = dictionary.numbers.invert[sets]
