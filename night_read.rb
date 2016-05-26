@@ -2,10 +2,10 @@ require './lib/braille_handler.rb'
 require './lib/text_generator.rb'
 require 'pry'
 
-handler = BrailleHandler.new(ARGV[0])
+handler = BrailleHandler.new(ARGV[0], ARGV[1])
 handler.braille_parser
 
-t = TextGenerator.new(handler.first_braille_line, handler.second_braille_line, handler.third_braille_line)
+t = TextGenerator.new(handler.braille_lines)
 t.braille_to_text
 
 output = t.output

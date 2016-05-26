@@ -1,45 +1,42 @@
 require './lib/text_generator.rb'
 
 class BrailleHandler
-  attr_reader :input,
-              :first_braille_line,
-              :second_braille_line,
-              :third_braille_line
+  attr_reader :input, :output_file, :braille_by_line, :marker
 
-  def initialize(filename)
-    file_processor(filename)
-    @first_braille_line = []
-    @second_braille_line = []
-    @third_braille_line = []
-    @count = 0
+  def initialize(input_file, output_file = ARGV[1])
+    file_processor(input_file)
+    @output_file = output_file
+    @braille_by_line = [[],[],[]]
+    @marker = 0
   end
 
-  def braille_parser
-    until input[@count] == nil
-      first_braille_line << input[@count].chars.each_slice(2).map(&:join)
-      second_braille_line << input[@count + 1].chars.each_slice(2).map(&:join)
-      third_braille_line << input[@count + 2].chars.each_slice(2).map(&:join)
-      @count += 3
-    end
-  end
-
-  def time
-    Time.now.strftime("%Y-%m-%e-%I:%M%p")
-  end
-
-  def write(output)
-    file = File.open("message-#{time}.txt", 'w') { |file| file.write(output) }
-    print "\nCreated 'messsage-#{time}.txt' containing #{file} characters.\n\n"
-    file.inspect
-  end
-
-  def file_processor(filename)
-    if File.exist?(filename)
-      @input = File.read(filename)
+  def file_processor(input_file)
+    if File.exist?(input_file)
+      @input = File.read(input_file)
       @input = input.split
     else puts "\nFile does not exist\n\n"
       exit
     end
+  end
+
+  def braille_parser
+    until input[marker] == nil
+      braille_by_line[0] << input[marker].chars.each_slice(2).map(&:join)
+      braille_by_line[1] << input[marker + 1].chars.each_slice(2).map(&:join)
+      braille_by_line[2] << input[marker + 2].chars.each_slice(2).map(&:join)
+      @marker += 3
+    end
+    braille_lines
+  end
+
+  def braille_lines
+    @braille_by_line.map { |line| line.flatten }
+  end
+
+  def write(output)
+    file = File.open(output_file, 'w') { |file| file.write(output) }
+    print "\nCreated #{output_file} containing #{file} characters.\n\n"
+    file.inspect
   end
 
 end
