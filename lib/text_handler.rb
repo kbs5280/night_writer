@@ -1,25 +1,9 @@
 class TextHandler
-  attr_reader :input
+  attr_reader :input, :output_file
 
-  # may want an additional tests to see if the file exists
-  # or test File.open if possible
-
-  def initialize(filename)
-    file_processor(filename)
-  end
-
-  def text
-    input.strip
-  end
-
-  def time
-    Time.now.strftime("%Y-%m-%e-%I:%M%p")
-  end
-
-  def write(output)
-    file = File.open("braille-#{time}.txt", 'w') { |file| file.write(output) }
-    print "\nCreated 'braille-#{time}.txt' containing #{file} characters.\n\n"
-    file.inspect
+  def initialize(input_file, output_file = ARGV[1])
+    file_processor(input_file)
+    @output_file = output_file
   end
 
   def file_processor(filename)
@@ -29,5 +13,16 @@ class TextHandler
       exit
     end
   end
+
+  def text
+    input.strip
+  end
+
+  def write(output)
+    file = File.open(output_file, 'w') { |file| file.write(output) }
+    print "\nCreated #{output_file} containing #{file} characters.\n\n"
+    file.inspect
+  end
+
 
 end

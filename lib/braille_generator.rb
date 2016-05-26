@@ -14,7 +14,6 @@ class BrailleGenerator
     @first_braille_line = ""
     @second_braille_line = ""
     @third_braille_line = ""
-    @final = []
   end
 
   def text_to_braille
@@ -26,7 +25,9 @@ class BrailleGenerator
   end
 
   def first_line_to_braille(text)
-    if text == text.downcase
+    if !!/\A\d+\z/.match(text)
+      dictionary.braille["#"][0].join + dictionary.numbers[text][0].join
+    elsif text == text.downcase
       dictionary.braille[text.downcase][0].join
     else
       dictionary.braille["capital"][0].join + dictionary.braille[text.downcase][0].join
@@ -34,7 +35,9 @@ class BrailleGenerator
   end
 
   def second_line_to_braille(text)
-    if text == text.downcase
+    if !!/\A\d+\z/.match(text)
+      dictionary.braille["#"][1].join + dictionary.numbers[text][1].join
+    elsif text == text.downcase
       dictionary.braille[text.downcase][1].join
     else
       dictionary.braille["capital"][1].join + dictionary.braille[text.downcase][1].join
@@ -42,7 +45,9 @@ class BrailleGenerator
   end
 
   def third_line_to_braille(text)
-    if text == text.downcase
+    if !!/\A\d+\z/.match(text)
+      dictionary.braille["#"][2].join + dictionary.numbers[text][2].join
+    elsif text == text.downcase
       dictionary.braille[text.downcase][2].join
     else
       dictionary.braille["capital"][2].join + dictionary.braille[text.downcase][2].join

@@ -2,12 +2,12 @@ require_relative 'test_helper'
 require './lib/text_handler.rb'
 
 class TextHandlerTest < Minitest::Test
-  attr_reader :filename,
-              :handler
+  attr_reader :handler
 
   def setup
-    @filename = "./input/phrase.txt"
-    @handler = TextHandler.new(filename)
+    input_file = "./input/phrase.txt"
+    output_file = "this_is_a_braille_message.txt"
+    @handler = TextHandler.new(input_file, output_file)
   end
 
   def test_it_can_read_in_a_file
@@ -18,12 +18,14 @@ class TextHandlerTest < Minitest::Test
     assert_equal "bad cat bat!", handler.text
   end
 
-  def test_it_can_record_the_time
-    assert_equal Time.now.strftime("%Y-%m-%e-%I:%M%p"), handler.time
+  def test_it_writes_to_file
+    handler.write("Test it writes to a file.")
+
+    assert_equal "Test it writes to a file.", File.read("this_is_a_test_message.txt")
   end
 
-  def test_it_can_count_character
-    assert_equal "6", handler.write("0.....")
+  def test_it_can_count_characters_in_a_file
+    assert_equal "12", handler.write("00..00..00..")
   end
 
 end

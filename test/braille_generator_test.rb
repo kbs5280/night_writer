@@ -6,116 +6,165 @@ class BrailleGeneratorTest < Minitest::Test
 
 # TESTING THE FIRST LINE
 
-  def test_it_can_generat_the_first_line_of_a_letter
+  def test_it_can_generate_the_first_line_of_a_letter
     text = ("a")
     b = BrailleGenerator.new(text)
+
     assert_equal "0.", b.first_line_to_braille(text)
   end
 
   def test_it_can_generate_the_first_line_of_a_capital_letter
     text = ("A")
     b = BrailleGenerator.new(text)
+
     assert_equal "..0.", b.first_line_to_braille(text)
   end
 
   def test_it_can_generate_the_first_line_of_another_letter
     text = ("b")
     b = BrailleGenerator.new(text)
+
     assert_equal "0.", b.first_line_to_braille(text)
   end
 
   def test_it_can_generate_the_first_line_of_another_capital_letter
     text = ("B")
     b = BrailleGenerator.new(text)
+
     assert_equal "..0.", b.first_line_to_braille(text)
   end
 
   def test_it_can_generate_the_first_line_of_a_space
     text = (" ")
     b = BrailleGenerator.new(text)
+
     assert_equal "..", b.first_line_to_braille(text)
   end
 
   def test_it_can_generate_the_first_line_of_a_symbol
     text = ("!")
     b = BrailleGenerator.new(text)
+
     assert_equal "..", b.first_line_to_braille(text)
   end
 
   # TESTING THE SECOND LINE
 
-  def test_it_can_generat_the_second_line_of_a_letter
+  def test_it_can_generate_the_second_line_of_a_letter
     text = ("a")
     b = BrailleGenerator.new(text)
+
     assert_equal "..", b.second_line_to_braille(text)
   end
 
   def test_it_can_generate_the_second_line_of_a_capital_letter
     text = ("A")
     b = BrailleGenerator.new(text)
+
     assert_equal "....", b.second_line_to_braille(text)
   end
 
   def test_it_can_generate_the_second_line_of_another_letter
     text = ("b")
     b = BrailleGenerator.new(text)
+
     assert_equal "0.", b.second_line_to_braille(text)
   end
 
   def test_it_can_generate_the_second_line_of_another_capital_letter
     text = ("B")
     b = BrailleGenerator.new(text)
+
     assert_equal "..0.", b.second_line_to_braille(text)
   end
 
   def test_it_can_generate_the_second_line_of_a_space
     text = (" ")
     b = BrailleGenerator.new(text)
+
     assert_equal "..", b.second_line_to_braille(text)
   end
 
   def test_it_can_generate_the_second_line_of_a_symbol
     text = ("!")
     b = BrailleGenerator.new(text)
+
     assert_equal "00", b.second_line_to_braille(text)
   end
 
   # TESTING THE THIRD LINE
 
-  def test_it_can_generat_the_third_line_of_a_letter
+  def test_it_can_generate_the_third_line_of_a_letter
     text = ("a")
     b = BrailleGenerator.new(text)
+
     assert_equal "..", b.third_line_to_braille(text)
   end
 
   def test_it_can_generate_the_third_line_of_a_capital_letter
     text = ("A")
     b = BrailleGenerator.new(text)
+
     assert_equal ".0..", b.third_line_to_braille(text)
   end
 
   def test_it_can_generate_the_third_line_of_another_letter
     text = ("b")
     b = BrailleGenerator.new(text)
-    assert_equal "..", b.third_line_to_braille(text) 
+
+    assert_equal "..", b.third_line_to_braille(text)
   end
 
   def test_it_can_generate_the_third_line_of_another_capital_letter
     text = ("B")
     b = BrailleGenerator.new(text)
+
     assert_equal ".0..", b.third_line_to_braille(text)
   end
 
   def test_it_can_generate_the_third_line_of_a_space
     text = (" ")
     b = BrailleGenerator.new(text)
+
     assert_equal "..", b.third_line_to_braille(text)
   end
 
   def test_it_can_generate_the_third_line_of_a_symbol
     text = ("!")
     b = BrailleGenerator.new(text)
+
     assert_equal "0.", b.third_line_to_braille(text)
+  end
+
+  # TEST NUMBERS
+
+  def test_it_can_generate_the_first_line_of_a_number
+    text = ("7")
+    b = BrailleGenerator.new(text)
+
+    assert_equal ".000", b.first_line_to_braille(text)
+  end
+
+  def test_it_can_generate_the_second_line_of_a_number
+    text = ("7")
+    b = BrailleGenerator.new(text)
+
+    assert_equal ".000", b.second_line_to_braille(text)
+  end
+
+  def test_it_can_generate_the_second_line_of_a_number
+    text = ("7")
+    b = BrailleGenerator.new(text)
+
+    assert_equal ".000", b.second_line_to_braille(text)
+  end
+
+  def test_it_can_generate_mulitple_numbers
+    text = ("78")
+    b = BrailleGenerator.new(text)
+    b.text_to_braille
+
+    assert_equal ".000.00.\n.000.000\n00..00..", b.output
   end
 
   # TEST PHRASE GENERATION
@@ -124,6 +173,7 @@ class BrailleGeneratorTest < Minitest::Test
     text = ("cat")
     b = BrailleGenerator.new(text)
     b.text_to_braille
+
     assert_equal "000..0\n....00\n....0.", b.output
   end
 
@@ -131,6 +181,7 @@ class BrailleGeneratorTest < Minitest::Test
     text = ("cat bat")
     b = BrailleGenerator.new(text)
     b.text_to_braille
+
     assert_equal "000..0..0.0..0\n....00..0...00\n....0.......0.", b.output
   end
 
@@ -138,8 +189,8 @@ class BrailleGeneratorTest < Minitest::Test
     text = ("test this line to see if it can be separated into an array of x braille characters")
     b = BrailleGenerator.new(text)
     b.text_to_braille
-    b.first_line_set
-  end
 
+    assert_equal [".00..0.0...00..0.0..0..0000....00....00.0....000...0.0..000.00..0.0....00.000.0.0..00.00...000.00...0.00..0.0.0.0.00..0.00..00..0.0.0..00.0.0...000.0.0.0.00.00.", "0..0"], b.first_line_set
+  end
 
 end

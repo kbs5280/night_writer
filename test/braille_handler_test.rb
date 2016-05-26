@@ -39,7 +39,7 @@ class BrailleHandlerTest < Minitest::Test
   end
 
   def test_it_can_count_characters_in_a_file
-    assert_equal "15", handler.write("add bat bad add")
+    assert_equal "25", handler.write("Test it writes to a file.")
   end
 
 end
